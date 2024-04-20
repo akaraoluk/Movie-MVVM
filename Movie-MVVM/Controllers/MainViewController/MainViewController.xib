@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Movie_MVVM" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="IoP-G8-qkd" id="VnH-ge-Wod"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,14 +25,22 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IoP-G8-qkd">
+                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="IoP-G8-qkd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="8nC-tY-ZFT"/>
+                <constraint firstItem="IoP-G8-qkd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Ilk-03-6uM"/>
                 <constraint firstItem="B9o-WX-X2D" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KED-T4-tct"/>
+                <constraint firstAttribute="bottom" secondItem="IoP-G8-qkd" secondAttribute="bottom" id="KiY-IL-74P"/>
                 <constraint firstItem="B9o-WX-X2D" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LQd-Km-OLv"/>
+                <constraint firstItem="IoP-G8-qkd" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="x4X-oH-GNi"/>
             </constraints>
-            <point key="canvasLocation" x="-134" y="20"/>
+            <point key="canvasLocation" x="-135.1145038167939" y="19.718309859154932"/>
         </view>
     </objects>
     <resources>
