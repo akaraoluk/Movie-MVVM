@@ -22,7 +22,9 @@ public class ApiCaller {
         }
         
         URLSession.shared.dataTask(with: url) { dataResponse, urlResponse, error in
-            if error == nil, let data = dataResponse, let resultData = try? JSONDecoder().decode(TrendingMovieModel.self, from: data) {
+            if error == nil,
+               let data = dataResponse,
+               let resultData = try? JSONDecoder().decode(TrendingMovieModel.self, from: data) {
                 completionHandler(.success(resultData))
             } else {
                 completionHandler(.failure(.canNotParseData))

@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     var viewModel: MainViewModel = MainViewModel()
     
     //Variables:
-    var cellDataSource: [Movie] = []
+    var cellDataSource: [MovieTableCellViewModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
 
     func configureView() {
         self.title = "Main View"
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .systemBackground
         
         setupTableView()
     }
@@ -59,6 +59,17 @@ class MainViewController: UIViewController {
             self.reloadTableView()
         }
         
+    }
+    
+    func openDetail(movieId: Int) {
+        guard let movie = viewModel.retriveMovie(with: movieId) else {
+            return
+        }
+        let detailsViewModel = DetailsMovieViewModel(movie: movie)
+        let detailController = DetailsMovieViewController(viewModel: detailsViewModel)
+        DispatchQueue.main.async {
+            self.navigationController?.pushViewController(detailController, animated: true)
+        }
     }
 
 }
